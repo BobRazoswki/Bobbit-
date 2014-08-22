@@ -1,5 +1,16 @@
 source 'https://rubygems.org'
 
+group :development, :test do
+gem 'rspec-rails'
+gem 'capybara'
+gem 'rspec-collection_matchers'
+gem 'database_cleaner'
+gem 'poltergeist'
+gem 'launchy'
+end
+gem "paperclip", "~> 4.1"
+gem 'aws-sdk'
+
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
