@@ -10,15 +10,33 @@ class Post < ActiveRecord::Base
 
 	validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
 
-
-
-
+	has_many :comments
 	has_many :likes
+	has_many :dislikes
 
 
 	def pluralize_likes
 		likes.count <= 1 ? " Like" : " Likes"
 	end
 
+	def pluralize_dislikes
+		dislikes.count <= 1 ? " Dislike" : " Dislikes"
+	end
+
+	def average_likes(post)
+		post.likes.count - post.dislikes.count
+	end
+
+	def controversial_likes(post)
+		ratio_likes_by_dislikes(post) - ratio_rating_by_posts
+	end
+
+	def ratio_likes_by_dislikes
+		post.likes.count / post.dislikes.count
+	end
+
+	def ratio_rating_by_posts
+		(@dislikes.count + @likes.count) / @posts.count
+	end
 
 end

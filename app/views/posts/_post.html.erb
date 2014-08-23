@@ -1,16 +1,37 @@
 <% @posts.each do |post| %>
 	<ul>
-		<li><%= post.title %>
+		<li>
+			<!-- POST -->
+				<%= post.title %>
 				<%= post.content %>
+					<!-- COMMENTS -->
+					<% post.comments.each do |comment|%>
+						<h1><%= comment.comment %></h1>
+					<% end %>
 				<!-- how to put that form in a partial, post is not linked-->
+				<!-- LIKES -->
 				<span class="like-count">
 					<%= post.likes.count %><%= post.pluralize_likes %>
 				</span>
 				<%= link_to "Like it!", post_likes_path(post), class: "like-link" %>
+				<!-- DISLIKES -->
+				<span class="dislike-count">
+					<%= post.dislikes.count %><%= post.pluralize_dislikes %>
+				</span>
+				<!-- AVERAGE -->
+				<span class="average">
+					<h3>Average likes:</h3><%=  post.average_likes(post) %>
+				</span>
+				<%= link_to "Dislike", post_dislikes_path(post), class: "dislike-link" %>
+				<!-- IMAGE -->
 				<%= image_tag post.picture.url(:thumb) %>
+				<!--  -->
+ <h1><%= (post.likes.count / (post.dislikes.count + 1)) - ((@dislikes.count + @likes.count) / @posts.count) %></h1>
+
+
 				<!-- how to put that form in a partial, post is not linked-->
-				<%= form_for [post, @new_comment] do |f| %>u
-				uu
+				<!-- FORM -->
+				<%= form_for [post, @new_comment] do |f| %>
 				  <%= f.label :comment %>
 				  <%= f.text_field :comment %>
 				  <%= f.submit 'Submit comment' %>

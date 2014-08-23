@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'LIKES' do
+describe 'DISLIKES' do
 
 	context "while logged out" do
 
@@ -10,7 +10,7 @@ describe 'LIKES' do
 
 		it "a user can like" do
 			visit('/')
-			click_link 'Like it!'
+			click_link 'Dislike'
 			expect(current_path).to eq('/users/sign_up')
 		end
 
@@ -29,8 +29,8 @@ describe 'LIKES' do
 
 		xit "a user can like" do
 			visit('/')
-			click_link 'Like it!'
-			expect(Like.count).to eq 1
+			click_link 'Dislike'
+			expect(Dislike.count).to eq 1
 		end
 	end
 

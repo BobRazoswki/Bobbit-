@@ -16,8 +16,16 @@
 //= require_tree .
 
 $(document).ready(function() {
+	$('.dislike-link').on('click', function(event) {
+		var likeCount = $(this).siblings('.dislike-count')
+		event.preventDefault();
 
-$('.like-link').on('click', function(event) {
+		$.post(this.href, function(response) {
+			/* ask why dislikeCount does not work.. ? */
+			likeCount.text(response.new_dislike_count + response.new_sentence)
+		});
+	});
+	$('.like-link').on('click', function(event) {
 		var likeCount = $(this).siblings('.like-count')
 		event.preventDefault();
 
@@ -25,5 +33,7 @@ $('.like-link').on('click', function(event) {
 			likeCount.text(response.new_like_count + response.new_sentence)
 		});
 	});
+
+
 
 });
