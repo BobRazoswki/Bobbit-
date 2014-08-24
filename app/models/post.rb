@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
 		has_attached_file :picture,
-							styles: {thumb: "100x100#", medium: "300x300#"},
+							styles: {thumb: "160x160#", medium: "300x300#"},
   									:storage => :s3,
 							  		:s3_credentials => {
 								    	:bucket => 'Bobbit',

@@ -1,9 +1,9 @@
-<h1>	Welcome to bobbit </h1>
+<h1>	Ready to Bob? </h1>
 
-<% if @posts.any? %>
-	<%= render "posts/post" %>
-<% else %>
-	No bob's yet
-<% end %>
+	<% if @posts.any? %>
+		<%= render "posts/post" %>
+	<% else %>
+		No bob's yet
+	<% end %>
 
 <%= render "posts/form_post" %>

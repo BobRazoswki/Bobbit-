@@ -1,14 +1,23 @@
 <% @posts.each do |post| %>
-	<ul>
+<ul class="col-lg-4 post-list">
 		<li>
 			<!-- POST -->
-				<%= post.title %>
-				<%= post.content %>
+			<article class="panel panel-default">
+  			<header class="panel-heading">
+  				<h3 class="panel-title"><%= post.title %></h3>
+  			</header>
+  			 <section class="panel-body">
+  			 	<!-- IMAGE -->
+					<%= image_tag post.picture.url(:thumb), class: "img-circle panel-img-position" %>
+			    <%= post.content %>
+			  </section>
+				<aside class="panel-aside">
 					<!-- COMMENTS -->
 					<% post.comments.each do |comment|%>
 						<h1><%= comment.comment %></h1>
 					<% end %>
-				<!-- how to put that form in a partial, post is not linked-->
+						<!-- how to put that form in a partial, post is not linked
+						CAN I PUT IT IN A COTROLLER ???-->
 				<!-- LIKES -->
 				<span class="like-count">
 					<%= post.likes.count %><%= post.pluralize_likes %>
@@ -17,25 +26,22 @@
 				<!-- DISLIKES -->
 				<span class="dislike-count">
 					<%= post.dislikes.count %><%= post.pluralize_dislikes %>
-				</span>
+					</span>
+					<%= link_to "Dislike", post_dislikes_path(post), class: "dislike-link" %>
 				<!-- AVERAGE -->
 				<span class="average">
-					<h3>Average likes:</h3><%=  post.average_likes(post) %>
+					Average: <%=  post.average_likes(post) %>
 				</span>
-				<%= link_to "Dislike", post_dislikes_path(post), class: "dislike-link" %>
-				<!-- IMAGE -->
-				<%= image_tag post.picture.url(:thumb) %>
-				<!--  -->
- <h1><%= (post.likes.count / (post.dislikes.count + 1)) - ((@dislikes.count + @likes.count) / @posts.count) %></h1>
-
-
-				<!-- how to put that form in a partial, post is not linked-->
+				<!-- how to put that form in a partial, post is not linked
+						CAN I PUT IT IN A COTROLLER ???-->
 				<!-- FORM -->
 				<%= form_for [post, @new_comment] do |f| %>
 				  <%= f.label :comment %>
 				  <%= f.text_field :comment %>
 				  <%= f.submit 'Submit comment' %>
 				<% end %>
+			</aside>
+			</article>
 		</li>
 	</ul>
 <% end %>

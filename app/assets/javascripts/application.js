@@ -12,16 +12,18 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require bootstrap-sprockets
 //= require_tree .
-
+/* 
+DOES NOT WORK WHEN ANGULAR IS SETUP
+ask why dislikeCount does not work.. ? */
 $(document).ready(function() {
 	$('.dislike-link').on('click', function(event) {
 		var likeCount = $(this).siblings('.dislike-count')
 		event.preventDefault();
 
 		$.post(this.href, function(response) {
-			/* ask why dislikeCount does not work.. ? */
+			
 			likeCount.text(response.new_dislike_count + response.new_sentence)
 		});
 	});
@@ -32,8 +34,7 @@ $(document).ready(function() {
 		$.post(this.href, function(response) {
 			likeCount.text(response.new_like_count + response.new_sentence)
 		});
+
 	});
-
-
 
 });

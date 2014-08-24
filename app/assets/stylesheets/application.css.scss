@@ -1,0 +1,68 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.panel-img-position {
+	
+}
+
+.img-circle {
+	opacity: 0.8;
+}
+
+.img-circle:hover {
+	opacity: 1;
+	transition: width 2s ease-in .5s;  
+}
+
+
+aside.panel-aside {
+	border-top: 1px solid whitesmoke;
+}
+
+.post-list {
+	list-style-type: none;
+}
+
+
+.bear-img-signed-in {
+background: url("bear.png") no-repeat;
+height: 20%;
+width: 100%;
+margin-top: -32px;
+margin-left: auto;
+margin-right: auto;
+background-position-y: -332px;
+background-position-x: -200px;
+}
+
+
+.bear-img {
+	background: url("bear.png") no-repeat;
+	height: 100%;
+	width: 100%;
+	margin-top: -62px;
+	margin-left: auto;
+	margin-right: auto;
+	background-position-y: -182px;
+	background-position-x: -200px;
+}
+
+section#about {
+	color: whitesmoke;
+}

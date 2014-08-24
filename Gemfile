@@ -10,8 +10,11 @@ gem 'launchy'
 end
 gem "paperclip", "~> 4.1"
 gem 'aws-sdk'
-
+gem 'angularjs-rails'
 gem 'devise'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 # Use postgresql as the database for Active Record
