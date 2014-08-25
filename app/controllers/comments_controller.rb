@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
 		@post = Post.find(params[:post_id])
 		@new_comment = @post.comments.new(params[:comment].permit(:comment))
 		@new_comment.save
-		redirect_to('/')
+		redirect_to post_path(@post)
 	end
 
 end
