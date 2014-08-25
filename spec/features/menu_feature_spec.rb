@@ -3,12 +3,12 @@ require 'rails_helper'
 describe 'MENU' do
 	context 'if logged out' do
 
-		xit 'display sign in' do
+		it 'display sign in' do
 			visit('/')
 			expect(page).to have_content('Sign in')
 		end
 
-		xit 'display sign up' do
+		it 'display sign up' do
 			visit('/')
 			expect(page).to have_content('Sign up')
 		end
