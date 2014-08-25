@@ -32,6 +32,14 @@ describe 'LIKES' do
 			click_link 'Like it!'
 			expect(Like.count).to eq 1
 		end
+
+	it 'add a like', js: true do
+		visit('/')
+		click_link "Like it!"
+		# find('.like-link').click
+		expect(page).to have_content '1 Like'
+	end
+
 	end
 
 end

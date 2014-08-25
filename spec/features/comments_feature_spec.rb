@@ -12,9 +12,7 @@ describe 'COMMENTS' do
 			visit('/')
 			fill_in 'comment_comment', with: "commentaa"
 			click_button 'Submit comment'
-			save_and_open_page
 			expect(page).to have_content("commentaa")
-
 		end
 
 	end

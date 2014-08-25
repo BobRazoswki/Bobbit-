@@ -9,6 +9,7 @@ group :development, :test do
 	gem 'launchy'
 	gem 'warden'
 	gem 'factory_girl_rails'
+	gem 'selenium-webdriver'
 end
 
 gem "paperclip", "~> 4.1"

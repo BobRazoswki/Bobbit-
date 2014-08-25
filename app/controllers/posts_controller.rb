@@ -16,8 +16,12 @@ class PostsController < ApplicationController
 
 	def hot
 
-	@posts = Post.all.sort_by { |post| post.hot(post) }
+	@posts = Post.all.sort_by { |post| post.hot_rank }
 	
+	end
+
+	def show
+		redirect_to('/') 
 	end
 
 end

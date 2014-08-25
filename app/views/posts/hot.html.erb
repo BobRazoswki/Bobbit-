@@ -1,5 +1,4 @@
 <h1>Hooot</h1>
-
 <% @posts.each do |post| %>
 <ul class="col-lg-4 post-list">
 		<li>
@@ -36,12 +35,16 @@
 					<%= link_to "Dislike", post_dislikes_path(post), class: "dislike-link" %>
 				<!-- AVERAGE -->
 				<span class="average">
-					Average: <%=  post.average_likes(post) %>
+					Average: <%=  post.average_likes %>
 				</span>
 				<!-- how to put that form in a partial, post is not linked
 						CAN I PUT IT IN A COTROLLER ???-->
 				<!-- FORM -->
-				
+				<%= form_for [@post, @new_comment] do |f| %>
+				  <%= f.label :comment %>
+				  <%= f.text_field :comment %>
+				  <%= f.submit 'Submit comment' %>
+				<% end %>
 			</aside>
 			</article>
 		</li>

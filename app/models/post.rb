@@ -23,8 +23,8 @@ class Post < ActiveRecord::Base
 		dislikes.count <= 1 ? " Dislike" : " Dislikes"
 	end
 
-	def average_likes(post)
-		post.likes.count - post.dislikes.count
+	def average_likes
+		likes.count - dislikes.count
 	end
 
 
@@ -33,9 +33,9 @@ class Post < ActiveRecord::Base
   	created_at.to_f - base_time.to_f
   end
 
-  def hot(post)
-  		return 0 if average_likes(post) <= 0
-  	 (Math.log10(average_likes(post)))+(time_count/45000)
+  def hot_rank
+  		return 0 if average_likes <= 0
+  	 (Math.log10(average_likes)+(time_count/45000))
   end
 
 
