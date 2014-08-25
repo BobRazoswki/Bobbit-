@@ -34,7 +34,7 @@ class Post < ActiveRecord::Base
   end
 
   def hot_rank
-  		return 0 if average_likes <= 0
+  	return 0 if average_likes <= 0
   	 (Math.log10(average_likes)+(time_count/45000))
   end
 

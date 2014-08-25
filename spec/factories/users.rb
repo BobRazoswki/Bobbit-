@@ -1,11 +1,11 @@
 FactoryGirl.define do
   factory :user do
-    email 'bob@github.com'
-    password '12345678'
-    password_confirmation '12345678'
+    email 'a@a.fr'
+    password '123456789'
+    password_confirmation '123456789'
 
     factory :alex do
-      username 'a@a.com'
+      username 'a@a.fr'
     end
   end
 end
