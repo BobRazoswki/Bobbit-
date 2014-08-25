@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'menu display' do
+describe 'MENU' do
 	context 'if logged out' do
 
 		xit 'display sign in' do
