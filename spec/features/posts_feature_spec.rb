@@ -21,13 +21,9 @@ describe 'can create an post' do
 
 	context 'if logged in' do
 
-	before(:each) do
-		alex = User.create(
-			 email: "a@a.com",
-			 password: "123456789",
-			 password_confirmation: "123456789")
-		login_as("a@a.com", "123456789")
-	end
+
+		let!(:user){ create(:user) }
+
 		it 'display article form' do
 			visit('/')
 			fill_in 'post_title', with: "Super title"

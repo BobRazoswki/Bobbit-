@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root :to => "pages#index"
+get '/posts/hot', to: 'posts#hot'
+  devise_for :users
 
   resources :posts do
   	resources :likes
@@ -12,7 +14,5 @@ Rails.application.routes.draw do
   resources :posts do
   	resources :comments
   end
-  
-  devise_for :users
   
 end

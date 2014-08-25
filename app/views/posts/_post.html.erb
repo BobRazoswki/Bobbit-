@@ -14,10 +14,14 @@
 				<aside class="panel-aside">
 					<!-- COMMENTS -->
 					<% post.comments.each do |comment|%>
-						<h1><%= comment.comment %></h1>
+						<ul>
+							<li>
+								<%= comment.comment %>
+							</li>
+						</ul>
 					<% end %>
-						<!-- how to put that form in a partial, post is not linked
-						CAN I PUT IT IN A COTROLLER ???-->
+				<!-- how to put that form in a partial, post is not linked
+					CAN I PUT IT IN A COTROLLER ???-->
 				<!-- LIKES -->
 				<span class="like-count">
 					<%= post.likes.count %><%= post.pluralize_likes %>
@@ -26,7 +30,7 @@
 				<!-- DISLIKES -->
 				<span class="dislike-count">
 					<%= post.dislikes.count %><%= post.pluralize_dislikes %>
-					</span>
+				</span>
 					<%= link_to "Dislike", post_dislikes_path(post), class: "dislike-link" %>
 				<!-- AVERAGE -->
 				<span class="average">

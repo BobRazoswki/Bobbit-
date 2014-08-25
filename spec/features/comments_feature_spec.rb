@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe 'COMMENTS' do
+	
 	context 'when logged in' do
 		before(:each) do
 			alex = User.create(
@@ -17,5 +18,7 @@ describe 'COMMENTS' do
 			click_button 'Submit comment'
 			expect(page).to have_content("commentaa")
 		end
+
 	end
+	
 end

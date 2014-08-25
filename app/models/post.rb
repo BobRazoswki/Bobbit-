@@ -27,9 +27,18 @@ class Post < ActiveRecord::Base
 		post.likes.count - post.dislikes.count
 	end
 
-	def controversial_likes(post)
-		ratio_likes_by_dislikes(post) - ratio_rating_by_posts
-	end
+
+	  def time_count
+  	base_time = DateTime.new(2005, 12, 8, 07, 46, 43)
+  	created_at.to_f - base_time.to_f
+  end
+
+  def hot(post)
+  		return 0 if average_likes(post) <= 0
+  	 (Math.log10(average_likes(post)))+(time_count/45000)
+  end
+
+
 
 	def ratio_likes_by_dislikes
 		post.likes.count / post.dislikes.count
