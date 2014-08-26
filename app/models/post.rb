@@ -38,8 +38,8 @@ class Post < ActiveRecord::Base
 		dislikes.count / likes.count
 	end
 
-	def hot_expiration
-		post < 24.hours.ago
+	def hot_expiration(post)
+		post.created_at < 24.hours.ago
 	end
 
   def hot_rank

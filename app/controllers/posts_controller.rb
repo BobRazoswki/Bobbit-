@@ -15,10 +15,12 @@ before_action :authenticate_user!, except: [:index]
 	end
 
 	def hot
+		@new_comment = Comment.new
 		@posts = Post.all.sort_by { |post| post.hot_rank }
 	end
 
 	def controversial
+		@new_comment = Comment.new
 		@posts = Post.all.sort_by { |post| post.controversy }
 	end
 	

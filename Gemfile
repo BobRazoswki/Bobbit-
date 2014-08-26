@@ -5,12 +5,12 @@ group :development, :test do
 	gem 'capybara'
 	gem 'rspec-collection_matchers'
 	gem 'database_cleaner'
-	gem 'poltergeist'
 	gem 'launchy'
 	gem 'warden'
-	gem 'factory_girl_rails'
 	gem 'selenium-webdriver'
 end
+
+gem "codeclimate-test-reporter", group: :test, require: nil
 
 gem "paperclip", "~> 4.1"
 gem 'aws-sdk'
@@ -18,6 +18,7 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'pg'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 #Default gem
 gem 'rails', '4.1.4'

@@ -1,15 +1,10 @@
 require 'rails_helper'
-
+# prefer_exact
 describe 'CATEGORIES' do
 	
 	context 'hot' do
 		it 'displays the hottest post' do
-				def login_as(email, password)
-					visit('/users/sign_in')
-					fill_in 'user_email', with: email
-					fill_in 'user_password', with: password
-					click_button 'Sign in'
-				end
+				
 
 				alex = User.create(
 					email: "a@a.fr",
