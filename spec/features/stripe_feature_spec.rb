@@ -31,6 +31,7 @@ describe 'STRIPE' do
 			expect(page).to have_css('label.amount')
 			expect(current_path).to eq('/')
 		end
+		
 	end
 
 end
