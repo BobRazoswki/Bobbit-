@@ -504,6 +504,8 @@
         0,
         0,
         null,
+        0,
+        null,
         null,
         null,
         null
@@ -611,6 +613,17 @@
         null,
         null
       ],
+      "/Users/Bob/Desktop/Development/bobbit-/app/mailers/purchase_confirmation.rb": [
+        1,
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        null,
+        null
+      ],
       "/Users/Bob/Desktop/Development/bobbit-/app/models/comment.rb": [
         1,
         1,
@@ -711,6 +724,6 @@
         null
       ]
     },
-    "timestamp": 1409066628
+    "timestamp": 1409070312
   }
 }

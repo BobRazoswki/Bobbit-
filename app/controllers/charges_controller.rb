@@ -22,6 +22,8 @@ def create
 rescue Stripe::CardError => e
   flash[:error] = e.message
   redirect_to root_path
+
+  PurchaseConfirmation.invoice(current_user ).deliver
 end
 
 
