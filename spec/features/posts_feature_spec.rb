@@ -57,6 +57,23 @@ describe 'POSTS' do
 				click_button 'Submit post'
 				expect(page).to have_content("Super title")
 			end
-		end
+
+			it 'can add a picture' do
+
+				alex = User.create(
+					email: "a@a.fr",
+					password: "123456789",
+					password_confirmation: "123456789")
+				login_as("a@a.fr", "123456789")
+
+				visit('/')
+				fill_in 'post_title', with: "Super title"
+				fill_in 'post_content', with: "Awesome content"
+				fill_in 'post_amount', with: "1000"
+				click_button 'Submit post'
+				expect(page).to have_content("Amount: $10")
+			end
+
+			end
 		end
 end

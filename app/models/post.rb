@@ -18,6 +18,11 @@ class Post < ActiveRecord::Base
 		DateTime.new(2008,9,11)
 	end
 
+	def right_price(post)
+		#return post == nil || NilClass ? "no price yet" : 
+		post.amount / 100
+	end
+
 	def pluralize_likes
 		likes.count <= 1 ? " Like" : " Likes"
 	end

@@ -1,11 +1,11 @@
 class ChargesController < ApplicationController
 
-def new
-end
+  before_action :authenticate_user!, except: [:index]
 
 def create
   # Amount in cents
-  @amount = 500
+  @post = Post.find(params[:post_id])
+  @amount = @post.amount
 
   customer = Stripe::Customer.create(
     :email => 'example@stripe.com',
@@ -15,13 +15,13 @@ def create
   charge = Stripe::Charge.create(
     :customer    => customer.id,
     :amount      => @amount,
-    :description => 'Rails Stripe customer',
+    :description => @post.title,
     :currency    => 'usd'
   )
 
 rescue Stripe::CardError => e
   flash[:error] = e.message
-  redirect_to charges_path
+  redirect_to root_path
 end
 
 

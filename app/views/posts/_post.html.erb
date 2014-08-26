@@ -43,6 +43,26 @@
 						Average: <%=  post.average_likes %>
 					</span>
 
+					<!-- PRICE -->
+					<% if post.amount != nil %>
+						<%= form_tag post_charges_path(post) do %>
+						  <article>
+						    <label class="amount">
+						      <span>Amount: $<%= post.right_price(post) %></span>
+						    </label>
+						  </article>
+
+						  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+						          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+						          data-description="<%= post.title %>"
+						          data-amount="<%= post.amount %>"></script>
+						<% end %>
+						<% else %>
+
+						<label class="amount">
+						      <span>Amount: $No price setup yet</span>
+						</label>
+					<% end %>
 					<!-- how to put that form in a partial, post is not linked
 							CAN I PUT IT IN A COTROLLER ???-->
 					<!-- COMMENT FORM -->

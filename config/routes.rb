@@ -7,12 +7,11 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-	resources :charges
-
   resources :posts do
   	resources :likes
   	resources :dislikes
   	resources :comments
+    resources :charges
   end
   
 end
