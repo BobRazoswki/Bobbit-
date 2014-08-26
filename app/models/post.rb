@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
 								    	:bucket => 'Bobbit',
 								    	:access_key_id => Rails.application.secrets.s3_access_key_id,
 								    	:secret_access_key => Rails.application.secrets.s3_secret_access_key
-									  }
+									  },:default_url =>  ActionController::Base.helpers.asset_path('bear.png')
 
 	validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
 

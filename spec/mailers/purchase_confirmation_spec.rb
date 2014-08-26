@@ -4,15 +4,14 @@ RSpec.describe PurchaseConfirmation, :type => :mailer do
   describe "invoice" do
 
     before do 
-     
-  
       @alex = User.create(
         email: "a@a.fr",
         password: "123456789",
         password_confirmation: "123456789")
-      end
+    end
     
-let(:mail) { PurchaseConfirmation.invoice(@alex) }
+    let(:mail) { PurchaseConfirmation.invoice(@alex) }
+    
     it "renders the headers" do
       expect(mail.subject).to eq("Invoice")
       expect(mail.to).to eq(["a@a.fr"])
