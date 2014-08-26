@@ -490,6 +490,8 @@
         null,
         0,
         null,
+        0,
+        null,
         null,
         null,
         null,
@@ -503,6 +505,7 @@
         null,
         0,
         0,
+        null,
         null,
         null,
         null,
@@ -602,6 +605,17 @@
         null,
         null
       ],
+      "/Users/Bob/Desktop/Development/bobbit-/app/mailers/purchase_confirmation.rb": [
+        1,
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        null,
+        null
+      ],
       "/Users/Bob/Desktop/Development/bobbit-/app/models/comment.rb": [
         1,
         1,
@@ -640,15 +654,15 @@
         null,
         1,
         null,
-        3,
+        4,
         null,
         null,
         1,
-        7,
+        8,
         null,
         null,
         1,
-        7,
+        8,
         null,
         null,
         1,
@@ -656,7 +670,7 @@
         null,
         null,
         1,
-        7,
+        8,
         null,
         null,
         1,
@@ -684,11 +698,19 @@
         1,
         1,
         1,
+<<<<<<< HEAD
         24,
         24,
         24,
         24,
         24,
+=======
+        25,
+        25,
+        25,
+        25,
+        25,
+>>>>>>> development
         null,
         null,
         1,
@@ -702,6 +724,10 @@
         null
       ]
     },
+<<<<<<< HEAD
     "timestamp": 1409067905
+=======
+    "timestamp": 1409075504
+>>>>>>> development
   }
 }

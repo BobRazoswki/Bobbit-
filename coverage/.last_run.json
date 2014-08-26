@@ -1,5 +1,9 @@
 {
   "result": {
+<<<<<<< HEAD
     "covered_percent": 83.23
+=======
+    "covered_percent": 81.11
+>>>>>>> development
   }
 }

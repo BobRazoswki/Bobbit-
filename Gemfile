@@ -7,7 +7,9 @@ group :development, :test do
 	gem 'database_cleaner'
 	gem 'launchy'
 	gem 'warden'
-	gem 'selenium-webdriver'
+	#gem 'selenium-webdriver'
+	gem 'poltergeist'
+	gem 'stripe-ruby-mock', '~> 1.10.1.7'
 end
 
 gem "codeclimate-test-reporter", group: :test, require: nil

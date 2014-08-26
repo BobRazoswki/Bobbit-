@@ -7,6 +7,8 @@ def create
   @post = Post.find(params[:post_id])
   @amount = @post.amount
 
+  PurchaseConfirmation.invoice(current_user ).deliver
+  
   customer = Stripe::Customer.create(
     :email => 'example@stripe.com',
     :card  => params[:stripeToken]
@@ -22,6 +24,7 @@ def create
 rescue Stripe::CardError => e
   flash[:error] = e.message
   redirect_to root_path
+
 end
 
 
