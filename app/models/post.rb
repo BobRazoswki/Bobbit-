@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
-		has_attached_file :picture,
-							styles: {thumb: "160x160#", medium: "300x300#"},
+	has_attached_file :picture,
+										styles: {thumb: "160x160#", medium: "300x300#"},
   									:storage => :s3,
 							  		:s3_credentials => {
 								    	:bucket => 'Bobbit',
@@ -10,10 +10,13 @@ class Post < ActiveRecord::Base
 
 	validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
 
-	has_many :comments
-	has_many :likes
-	has_many :dislikes
+	has_many :comments, dependent: :destroy
+	has_many :likes, dependent: :destroy
+	has_many :dislikes, dependent: :destroy
 
+	def time_stamp
+		DateTime.new(2008,9,11)
+	end
 
 	def pluralize_likes
 		likes.count <= 1 ? " Like" : " Likes"
@@ -23,29 +26,31 @@ class Post < ActiveRecord::Base
 		dislikes.count <= 1 ? " Dislike" : " Dislikes"
 	end
 
+	def magnitude
+		likes.count + dislikes.count
+	end
+
 	def average_likes
 		likes.count - dislikes.count
 	end
 
+	def balance
+		dislikes.count / likes.count
+	end
 
-	  def time_count
-  	base_time = DateTime.new(2005, 12, 8, 07, 46, 43)
-  	created_at.to_f - base_time.to_f
-  end
+	def hot_expiration
+		post < 24.hours.ago
+	end
 
   def hot_rank
-  	return 0 if average_likes <= 0
-  	 (Math.log10(average_likes)+(time_count/45000))
+  	Post.all.sort_by { |post| post.likes.count }
   end
 
+  def controversy
+   return 0 if dislikes.count <= 0 || likes.count <= 0
+   likes.count > dislikes.count ? dislikes.count / likes.count : likes.count / dislikes.count
+   return magnitude ** balance
+  end
 
-
-	def ratio_likes_by_dislikes
-		post.likes.count / post.dislikes.count
-	end
-
-	def ratio_rating_by_posts
-		(@dislikes.count + @likes.count) / @posts.count
-	end
 
 end

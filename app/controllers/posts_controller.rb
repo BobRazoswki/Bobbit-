@@ -18,6 +18,10 @@ before_action :authenticate_user!, except: [:index]
 		@posts = Post.all.sort_by { |post| post.hot_rank }
 	end
 
+	def controversial
+		@posts = Post.all.sort_by { |post| post.controversy }
+	end
+	
 	def show
 		redirect_to('/') 
 	end
