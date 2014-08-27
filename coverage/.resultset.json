@@ -523,13 +523,13 @@
         1,
         null,
         1,
-        51,
+        65,
         null,
         null,
         1,
-        19,
-        29,
-        19,
+        23,
+        35,
+        23,
         null,
         null,
         null
@@ -554,8 +554,9 @@
         1,
         null,
         1,
-        0,
-        0,
+        1,
+        1,
+        1,
         null,
         null,
         null
@@ -566,8 +567,9 @@
         1,
         null,
         1,
-        0,
-        0,
+        1,
+        1,
+        1,
         null,
         null,
         null
@@ -616,6 +618,11 @@
         null,
         null
       ],
+      "/Users/Bob/Desktop/Development/bobbit-/app/mailers/purchase_mailer.rb": [
+        1,
+        1,
+        null
+      ],
       "/Users/Bob/Desktop/Development/bobbit-/app/models/comment.rb": [
         1,
         1,
@@ -654,15 +661,15 @@
         null,
         1,
         null,
-        4,
+        3,
         null,
         null,
         1,
-        8,
+        12,
         null,
         null,
         1,
-        8,
+        12,
         null,
         null,
         1,
@@ -670,7 +677,7 @@
         null,
         null,
         1,
-        8,
+        11,
         null,
         null,
         1,
@@ -698,19 +705,11 @@
         1,
         1,
         1,
-<<<<<<< HEAD
-        24,
-        24,
-        24,
-        24,
-        24,
-=======
-        25,
-        25,
-        25,
-        25,
-        25,
->>>>>>> development
+        30,
+        30,
+        30,
+        30,
+        30,
         null,
         null,
         1,
@@ -724,10 +723,6 @@
         null
       ]
     },
-<<<<<<< HEAD
-    "timestamp": 1409067905
-=======
-    "timestamp": 1409075504
->>>>>>> development
+    "timestamp": 1409127537
   }
 }

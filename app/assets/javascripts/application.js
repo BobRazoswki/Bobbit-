@@ -17,6 +17,8 @@
 /* 
 DOES NOT WORK WHEN ANGULAR IS SETUP
 ask why dislikeCount does not work.. ? */
+
+
 $(document).ready(function() {
 	$('.dislike-link').on('click', function(event) {
 		var likeCount = $(this).siblings('.dislike-count')

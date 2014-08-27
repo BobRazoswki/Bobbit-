@@ -8,17 +8,17 @@ describe 'LIKES' do
 			Post.create(title: "bob")
 		end
 
-		xit "a user cannot like" do
+		it "a user cannot like", js: true do
 			visit('/')
 			click_link 'Like it!'
-			expect(current_path).to eq('/users/sign_up')
+			expect(current_path).to eq('/')
 		end
 
 	end
 
 	context "while logged in" do
 
-		xit "a user can like" do
+		it "a user can like", js: true do
 
 			alex = User.create(
 				email: "a@a.fr",
@@ -26,23 +26,12 @@ describe 'LIKES' do
 				password_confirmation: "123456789")
 			login_as("a@a.fr", "123456789")
 
-			visit('/')
-			click_link 'Like it!'
-			expect(Like.count).to eq 1
-		end
-
-		xit 'add a like' do
-
-			alex = User.create(
-				email: "a@a.fr",
-				password: "123456789",
-				password_confirmation: "123456789")
-			login_as("a@a.fr", "123456789")
+			Post.create(title: "bob")
 
 			visit('/')
+			#find('.dislike-link').click
 			click_link "Like it!"
-			#find('.like-link').click
-			expect(page).to have_content '1 Like'
+			expect(page).to have_content"1 Like"
 		end
 
 	end

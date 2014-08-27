@@ -4,21 +4,20 @@ describe 'DISLIKES' do
 
 	context "while logged out" do
 
-		xit "a user cannot dislike" do
+	it "a user cannot dislike", js: true do
 
 			Post.create(title: "bob")
 
 			visit('/')
-			save_and_open_page
 			click_link 'Dislike'
-			expect(current_path).to eq('/users/sign_up')
+			expect(current_path).to eq('/')
 		end
 
 	end
 
 	context "while logged in" do
 
-		xit "a user can dislike" do
+		it "a user can dislike", js: true do
 
 			alex = User.create(
 				email: "a@a.fr",
@@ -26,9 +25,12 @@ describe 'DISLIKES' do
 				password_confirmation: "123456789")
 			login_as("a@a.fr", "123456789")
 
+			Post.create(title: "bob")
+
 			visit('/')
-			click_link 'Dislike'
-			expect(Dislike.count).to eq 1
+			#find('.dislike-link').click
+			click_link "Dislike"
+			expect(page).to have_content"1 Dislike"
 		end
 	end
 
