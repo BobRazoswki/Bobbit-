@@ -10,10 +10,6 @@ before_action :authenticate_user!, except: [:index]
 
 	def create
 		@post = Post.find(params[:post_id])
-		@dislike = @post.dislikes.new
-		@like = @post.likes.new
-		@dislike.save 
-		@like.save 
 	end
 
 end
