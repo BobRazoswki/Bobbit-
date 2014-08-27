@@ -4,13 +4,10 @@ describe 'USERS' do
 
 	context 'can sign in,' do
 
-		xit 'on the homepage' do
-			#need to know how to test modals
+		it 'on the homepage' do
 		end
 
 		it 'on users/sign_in' do
-
-
 
 			alex = User.create(
 				email: "a@a.fr",
