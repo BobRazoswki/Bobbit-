@@ -1,0 +1,188 @@
+<!DOCTYPE html><html><head>
+  <title>Bobbit</title>
+  <link href="/assets/application.css" media="all" rel="stylesheet">
+  <script src="/assets/application.js"></script>
+  
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+<link type="text/css" rel="stylesheet" href="https://checkout.stripe.com/v3/checkout/button.css"></head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+  	<!-- Navigation -->
+	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+					<i class="fa fa-bars"></i>
+				</button>
+					<a class="navbar-brand page-scroll" href="#page-top">
+						<i class="fa fa-play-circle"></i>  <span class="light">Welcome</span> to Bobbit !
+					</a>
+			</div>
+				<header>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+							<ul class="nav navbar-nav">
+								<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+								<li class="hidden active">
+									<a href="#page-top"></a>
+								</li>
+								<li> 
+									<a href="/">Home</a>
+								</li>
+								<li> 
+									<a data-method="delete" href="/users/sign_out" rel="nofollow">Sign out</a>
+								</li>
+							</ul>
+						</div>
+					</header>
+					<!-- /.navbar-collapse -->
+			</div>
+		<!-- /.container -->
+	</nav>
+
+	<!-- About Section, user IN -->
+<article class="bear-img-signed-in">
+	<section id="about" class="container content-section text-center">
+	  <div class="row">
+	    <div class="col-lg-8 col-lg-offset-2">
+	    </div>
+	  </div>
+	</section>
+</article>
+
+
+
+  <!-- Flash notice -->
+<p class="notice"></p>
+<p class="alert"></p>
+
+
+  <a href="/posts/hot">Hot</a>
+  <a href="/posts/controversial">Controversial</a>
+  
+      <h1>	Ready to Bob? </h1>
+
+		<ul class="col-md-8 col-centered post-list">
+	<li>
+		<!-- POST -->
+		<article class="panel panel-default">
+  		<header class="panel-heading">
+  			<h3 class="panel-title">bob</h3>
+  		</header>
+  			<section class="panel-body">
+  				<!-- IMAGE -->
+					<img alt="Missing" class="img-circle panel-img-position" src="/pictures/thumb/missing.png">
+					<!-- CONTENT -->
+			    
+			  </section>
+
+				<aside class="panel-aside">
+					<!-- COMMENTS -->
+
+					<!-- how to put that form in a partial, post is not linked
+						CAN I PUT IT IN A COTROLLER ???-->
+
+					<!-- LIKES -->
+					<span class="like-count">
+						0 Like
+					</span>
+						<a class="like-link" href="/posts/7/likes">Like it!</a>
+
+					<!-- DISLIKES -->
+					<span class="dislike-count">
+						0 Dislike
+					</span>
+						<a class="dislike-link" href="/posts/7/dislikes">Dislike</a>
+
+					<!-- AVERAGE -->
+					<span class="average">
+						Average: 0
+					</span>
+
+					<!-- PRICE -->
+						<form accept-charset="UTF-8" action="/posts/7/charges" method="post"><div style="display:none"><input name="utf8" type="hidden" value="✓"></div>
+						  <article>
+						    <label class="amount">
+						      <span>Amount: $20</span>
+						    </label>
+						  </article>
+
+						  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button active" data-key="" data-description="bob" data-amount="2000"></script><button type="submit" class="stripe-button-el" style="visibility: visible; "><span style="display: block; min-height: 30px; ">Pay with Card</span></button>
+</form>					<!-- how to put that form in a partial, post is not linked
+							CAN I PUT IT IN A COTROLLER ???-->
+					<!-- COMMENT FORM -->
+					<form accept-charset="UTF-8" action="/posts/7/comments" class="new_comment" id="new_comment" method="post"><div style="display:none"><input name="utf8" type="hidden" value="✓"></div>
+					  <label for="comment_comment">Comment</label>
+					  <input id="comment_comment" name="comment[comment]" type="text">
+					  <input name="commit" type="submit" value="Submit comment">
+</form>				</aside>
+			</article>
+		</li>
+	</ul>
+
+
+<!-- Button trigger modal -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Write a Bob !
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <form accept-charset="UTF-8" action="/posts" class="new_post" enctype="multipart/form-data" id="new_post" method="post"><div style="display:none"><input name="utf8" type="hidden" value="✓"></div>
+
+  <label for="post_title">Title</label>
+  <input id="post_title" name="post[title]" type="text">
+
+  <label for="post_content">Content</label>
+  <textarea id="post_content" name="post[content]"></textarea>
+
+  <label for="post_picture">Picture</label>
+  <input id="post_picture" name="post[picture]" type="file">
+
+  <label for="post_amount">Amount</label>
+  <input id="post_amount" name="post[amount]" type="number">
+
+  <input name="commit" type="submit" value="Submit post">
+ 
+</form>      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <!-- Footer -->
+<footer>
+	<section class="container text-center">
+		<p>Copyright © Bobbit 2014</p>
+	</section>
+</footer>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+
+
+
+<iframe frameborder="0" allowtransparency="true" style="z-index: 9999; display: none; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgba(0, 0, 0, 0.00390625); border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-top-color: transparent; border-right-color: transparent; border-bottom-color: transparent; border-left-color: transparent; overflow-x: hidden; overflow-y: auto; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; visibility: visible; background-position: initial initial; background-repeat: initial initial; " src="https://checkout.stripe.com/v3" name="stripe_checkout_app" class="stripe_checkout_app"></iframe></body></html>

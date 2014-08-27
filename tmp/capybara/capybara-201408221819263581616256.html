@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bobbit</title>
+  <link data-turbolinks-track="true" href="/assets/application.css" media="all" rel="stylesheet" />
+  <script data-turbolinks-track="true" src="/assets/application.js"></script>
+  
+</head>
+<body>
+
+<header>
+		<nav>
+			<ul>
+				<li> 
+					<a href="/">Home</a>
+				</li>
+				<li> 
+					<a data-method="delete" href="/users/sign_out" rel="nofollow">Sign out</a>
+				</li>
+			</ul>
+		</nav>
+</header>
+<p class="notice"></p>
+<p class="alert"></p>
+
+
+<h1>	Welcome to bobbit </h1>
+
+		<ul>
+		<li>bob
+				
+				<!-- how to put that form in a partial, post is not linked-->
+				<span class="like-count">
+					0 Like
+				</span>
+				<a class="like-link" href="/posts/68/likes">Like it!</a>
+				<img alt="Missing" src="/pictures/thumb/missing.png" />
+				<!-- how to put that form in a partial, post is not linked-->
+				<form accept-charset="UTF-8" action="/posts/68/comments" class="new_comment" id="new_comment" method="post"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>u
+				uu
+				  <label for="comment_comment">Comment</label>
+				  <input id="comment_comment" name="comment[comment]" type="text" />
+				  <input name="commit" type="submit" value="Submit comment" />
+</form>		</li>
+	</ul>
+
+
+<h1> Write a new bob </h1>
+
+<form accept-charset="UTF-8" action="/posts" class="new_post" enctype="multipart/form-data" id="new_post" method="post"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+
+  <label for="post_title">Title</label>
+  <input id="post_title" name="post[title]" type="text" />
+
+  <label for="post_content">Content</label>
+  <textarea id="post_content" name="post[content]">
+</textarea>
+
+  <label for="post_picture">Picture</label>
+  <input id="post_picture" name="post[picture]" type="file" />
+
+  <input name="commit" type="submit" value="Submit post" />
+ 
+</form>
+
+
+</body>
+</html>

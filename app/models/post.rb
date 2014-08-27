@@ -51,9 +51,13 @@ class Post < ActiveRecord::Base
   	Post.all.sort_by { |post| post.likes.count }
   end
 
+  def controversy_algorythm
+  	likes.count > dislikes.count ? dislikes.count / likes.count : likes.count / dislikes.count
+  end
+
   def controversy
    return 0 if dislikes.count <= 0 || likes.count <= 0
-   likes.count > dislikes.count ? dislikes.count / likes.count : likes.count / dislikes.count
+   controversy_algorythm
    return magnitude ** balance
   end
 
