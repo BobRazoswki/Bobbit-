@@ -3,6 +3,9 @@ class PostsController < ApplicationController
 before_action :authenticate_user!, except: [:index]
 #before_action :signed_in_user, only: [ :index, :create, :hot]
 	def index
+		    Pusher['bobbit-_channel'].trigger('upload-pic', {
+      message: 'hello world'
+    })
 		@new_post = Post.new(params[:post].permit(:title, :content, :picture, :amount))
 		@posts = Post.all
 		render json: { posts: @posts }
@@ -27,5 +30,9 @@ before_action :authenticate_user!, except: [:index]
 	def show
 		redirect_to('/') 
 	end
+	
+
+
+
 
 end

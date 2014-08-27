@@ -15,6 +15,23 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
 
+  <script src="//js.pusher.com/2.2/pusher.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+
+    // Enable pusher logging - don't include this in production
+    Pusher.log = function(message) {
+      if (window.console && window.console.log) {
+        window.console.log(message);
+      }
+    };
+
+    var pusher = new Pusher('87308');
+    var channel = pusher.subscribe('bobbit-_channel');
+    channel.bind('upload-pic', function(data) {
+      alert(data.message);
+    });
+  </script>
+
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">

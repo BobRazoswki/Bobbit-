@@ -52,12 +52,16 @@ class Post < ActiveRecord::Base
   end
 
   def controversy_algorythm
-  	likes.count > dislikes.count ? dislikes.count / likes.count : likes.count / dislikes.count
+  	#likes.count > dislikes.count ? dislikes.count / likes.count : likes.count / dislikes.count
+  end
+
+  def rank_are_nil
+  	dislikes.count <= 0 || likes.count <= 0
   end
 
   def controversy
-   return 0 if dislikes.count <= 0 || likes.count <= 0
-   controversy_algorythm
+   return 0 if rank_are_nil
+   #controversy_algorythm
    return magnitude ** balance
   end
 
