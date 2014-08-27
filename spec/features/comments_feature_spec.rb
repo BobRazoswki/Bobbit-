@@ -4,9 +4,7 @@ describe 'COMMENTS' do
 	
 	context 'when logged in' do
 		
-		
 		it 'can let a comment' do
-
 		
 			alex = User.create(
 				email: "a@a.fr",
