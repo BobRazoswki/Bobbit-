@@ -11,7 +11,6 @@ describe 'COMMENTS' do
 				password: "123456789",
 				password_confirmation: "123456789")
 			login_as("a@a.fr", "123456789")
-
 			Post.create(title: "bob")
 			visit root_path
 			fill_in 'comment_comment', with: "commentaa"
